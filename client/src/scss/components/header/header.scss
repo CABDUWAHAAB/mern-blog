@@ -1,0 +1,25 @@
+.header {
+    @apply bg-blue-400 min-h-[5rem] p-[4rem];
+
+    &__ul {
+        @apply flex list-none gap-[4rem];
+        @apply justify-start items-center;
+    }
+
+    &__list {
+        @apply p-[1rem] cursor-pointer;
+
+        &:hover {
+            @apply bg-purple-400;
+        }
+    }
+
+    &__link {
+        @apply text-white no-underline;
+
+        &:hover {
+            @apply text-amber-500;
+        }
+    }
+
+}
