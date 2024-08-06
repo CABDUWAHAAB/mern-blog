@@ -4,10 +4,10 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "start": "nodemon server.js",
+    "start:server": "nodemon server.js",
     "watch": "mix watch",
     "client": "npm run all --prefix ./client",
-    "dev": "concurrently \"npm start\" \"npm run watch\" \"npm run client\""
+    "start": "concurrently nodemon \"npm run start:server\" \"npm run watch\" \"npm run client\""
   },
   "keywords": [],
   "author": "",

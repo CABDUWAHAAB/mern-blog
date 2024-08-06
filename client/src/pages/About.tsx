@@ -1,12 +1,9 @@
-import React from 'react'
-import { Header } from '../components/header/Header';
-import { Form } from '../components/form/form';
+import React from "react";
 
 export const About = () => {
   return (
     <>
-        <Header/>
-        <Form/>
+      <h1>about</h1>
     </>
-  )
+  );
 };

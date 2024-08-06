@@ -1,0 +1,19 @@
+.adminHead {
+    &__header {
+        @apply bg-blue-400  h-[10rem] p-[4rem];
+    }
+
+    &__ul {
+        @apply flex ;
+
+    }
+
+    &__li {
+
+    }
+
+    &__link {
+
+    }
+
+}
