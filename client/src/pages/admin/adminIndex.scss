@@ -1,0 +1,16 @@
+.index {
+  
+    &__ul {
+      @apply grid grid-cols-12 grid-rows-12 gap-0; 
+      @apply bg-green-300 w-full h-screen;
+    }
+    
+    &__li--right {
+      @apply col-start-3 col-end-13 row-start-1 row-end-13; 
+    }
+  
+    &__li--left {
+      @apply col-start-1 col-end-3;
+    }
+  }
+  

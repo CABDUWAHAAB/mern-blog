@@ -1,0 +1,21 @@
+.asideHeader {
+    @apply flex flex-col bg-yellow-500 gap-[5rem];
+    @apply w-full h-screen px-[2rem] py-[2rem];
+
+    &__logo {
+        
+    }
+    
+    &__Imglogo {
+        @apply w-[5rem] h-auto;
+    }
+
+    &__ul {
+        @apply flex flex-col gap-4  list-none;
+    }
+
+    &__link {
+        @apply no-underline;
+    }
+    
+}

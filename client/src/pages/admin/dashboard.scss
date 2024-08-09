@@ -1,0 +1,28 @@
+.Dashboard {
+    &__dash {
+        @apply grid grid-cols-12 grid-rows-12 gap-0 h-screen;
+        
+    } 
+
+
+    /*
+        DashboardChart.tsx classes
+    */
+
+    &__ChartBarLeft {
+        @apply col-start-2 col-end-7;
+        @apply row-start-2 row-end-6;
+    }
+
+    &__Bart {
+        @apply shadow-lg bg-white ;
+        @apply w-full;
+        @apply p-[.5rem] rounded-lg;
+    }
+
+    &__PieCharRight {
+        @apply col-start-8 col-end-12;
+        @apply row-start-2 row-end-6;
+        @apply bg-white;
+    }
+} 
