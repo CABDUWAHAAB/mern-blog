@@ -31,12 +31,13 @@
     }
 
     &__TableCard {
-        @apply col-start-2 col-end-7;
+        @apply col-start-2 col-end-9;
         @apply row-start-6 row-end-11;
-        @apply bg-red-400;
+        @apply bg-red-400 border-4;
+        @apply border-black rounded-xl p-4;
     }
 
     &__Table {
-        @apply table-auto border;
+        @apply table-auto;
     }
 } 

@@ -1,0 +1,47 @@
+.PostBlog {
+    @apply bg-white w-full min-h-[84.7rem] py-[6rem] px-[8rem];
+
+    &__form {
+       @apply flex flex-col gap-[2rem];
+    }
+
+    &__LabelInputBox {
+        @apply flex flex-col gap-[.9rem] items-start;
+    }
+
+    &__Label {
+
+    }
+
+    &__Input {
+        @apply w-3/5 px-[1rem] py-[.8rem];
+    }
+
+    &__textarea {
+        @apply w-3/5 h-[20rem];
+    }
+
+    &__UploadBox{
+        @apply flex flex-col gap-[.9rem] items-start;
+    }
+
+    &__UploadImageFileBox {
+        @apply border border-solid border-gray-400 w-3/5;
+    }
+
+    &__UploadImageFile[type=file]::file-selector-button {
+        @apply bg-white text-black border-0 py-[1rem] px-[1.5rem];
+        @apply border-r border-solid mr-8 delay-300;
+
+        &::file-selector-button:hover {
+            @apply bg-[#eee] border-none;
+            @apply border-r border-solid border-gray-500;
+        }
+    }
+
+    &__Submit {
+        @apply min-w-[10rem] w-[14rem] max-w-[20rem] h-[5rem];
+        @apply bg-cyan-400 border-none rounded-lg cursor-pointer;
+        @apply text-3xl font-semibold font-serif;
+    }
+}

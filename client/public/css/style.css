@@ -98,15 +98,19 @@
 }
 .Dashboard__TableCard {
   grid-column-start: 2;
-  grid-column-end: 7;
+  grid-column-end: 9;
   grid-row-start: 6;
   grid-row-end: 11;
+  border-width: 4px;
   --tw-bg-opacity: 1;
   background-color: rgb(248 113 113 / var(--tw-bg-opacity));
+  border-radius: 0.75rem;
+  --tw-border-opacity: 1;
+  border-color: rgb(0 0 0 / var(--tw-border-opacity));
+  padding: 1rem;
 }
 .Dashboard__Table {
   table-layout: auto;
-  border-width: 1px;
 }
 .index__ul {
   display: grid;
@@ -156,6 +160,93 @@
 }
 .asideHeader__link {
   text-decoration-line: none;
+}
+.PostBlog {
+  min-height: 84.7rem;
+  width: 100%;
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+  padding-left: 8rem;
+  padding-right: 8rem;
+}
+.PostBlog__form {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.PostBlog__LabelInputBox {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: .9rem;
+}
+.PostBlog__Label {
+
+    }
+.PostBlog__Input {
+  width: 60%;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: .8rem;
+  padding-bottom: .8rem;
+}
+.PostBlog__textarea {
+  height: 20rem;
+  width: 60%;
+}
+.PostBlog__UploadBox {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: .9rem;
+}
+.PostBlog__UploadImageFileBox {
+  width: 60%;
+  border-width: 1px;
+  border-style: solid;
+  --tw-border-opacity: 1;
+  border-color: rgb(156 163 175 / var(--tw-border-opacity));
+}
+.PostBlog__UploadImageFile[type=file]::file-selector-button {
+  border-width: 0px;
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  --tw-text-opacity: 1;
+  color: rgb(0 0 0 / var(--tw-text-opacity));
+  margin-right: 2rem;
+  border-right-width: 1px;
+  border-style: solid;
+  transition-delay: 300ms;
+}
+.PostBlog__UploadImageFile[type=file]::file-selector-button::file-selector-button:hover {
+  border-style: none;
+  --tw-bg-opacity: 1;
+  background-color: rgb(238 238 238 / var(--tw-bg-opacity));
+  border-right-width: 1px;
+  border-style: solid;
+  --tw-border-opacity: 1;
+  border-color: rgb(107 114 128 / var(--tw-border-opacity));
+}
+.PostBlog__Submit {
+  height: 5rem;
+  width: 14rem;
+  min-width: 10rem;
+  max-width: 20rem;
+  cursor: pointer;
+  border-radius: 0.5rem;
+  border-style: none;
+  --tw-bg-opacity: 1;
+  background-color: rgb(34 211 238 / var(--tw-bg-opacity));
+  font-family: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+  font-weight: 600;
 }
 /*
         ! tailwindcss v3.4.7 | MIT License | https://tailwindcss.com
