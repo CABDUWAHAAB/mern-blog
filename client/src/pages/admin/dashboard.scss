@@ -1,7 +1,6 @@
 .Dashboard {
     &__dash {
-        @apply grid grid-cols-12 grid-rows-12 gap-0 h-screen;
-        
+        @apply grid grid-cols-12 grid-rows-12 gap-[2rem] h-screen w-screen;
     } 
 
 
@@ -10,8 +9,8 @@
     */
 
     &__ChartBarLeft {
-        @apply col-start-2 col-end-7;
-        @apply row-start-2 row-end-6;
+        @apply col-start-2 col-end-6;
+        @apply row-start-2 row-end-4;
     }
 
     &__Bart {
@@ -21,8 +20,23 @@
     }
 
     &__PieCharRight {
-        @apply col-start-8 col-end-12;
+        @apply col-start-6 col-end-9;
         @apply row-start-2 row-end-6;
-        @apply bg-white;
+        
+    }
+
+    &__PieChart {
+        @apply bg-white w-full;
+        @apply p-[.5rem] rounded-lg;
+    }
+
+    &__TableCard {
+        @apply col-start-2 col-end-7;
+        @apply row-start-6 row-end-11;
+        @apply bg-red-400;
+    }
+
+    &__Table {
+        @apply table-auto border;
     }
 } 
