@@ -5,8 +5,9 @@
 @import "../pages/admin/dashboard.scss";
 @import "../pages/admin/adminIndex.scss";
 @import "../components/aside/asideHeader.scss";
-@import "../pages/admin/PostBlog.scss";
+@import "../pages/admin/posts/PostBlog.scss";
 @import "../pages/blog.scss";
+@import "../pages/admin/posts/UpdateBlogPost.scss";
 
 @tailwind base;
 @tailwind components;

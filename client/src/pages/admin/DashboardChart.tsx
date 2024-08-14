@@ -1,14 +1,69 @@
-import * as React from "react";
+import { useState, useEffect } from "react";
+import axios from "axios";
+import { Link } from "react-router-dom";
 import { BarChart } from "@mui/x-charts/BarChart";
 import { PieChart } from "@mui/x-charts/PieChart";
+import { UpdateBlog } from "./posts/Updateblog";
+
+interface Blog {
+  _id: string;
+  title: string;
+  author: string;
+  description: string;
+  image: string;
+  createdAt: string;
+}
 
 export const DashboardChart = () => {
-  /*Pie Chart*/
-  const data = [
-    { id: 0, value: 10, label: "series A" },
-    { id: 1, value: 15, label: "series B" },
-    { id: 2, value: 20, label: "series C" },
-  ];
+  const [barChartData, setBarChartData] = useState<number[]>([]);
+  const [pieChartData, setPieChartData] = useState<
+    { id: number; value: number; label: string }[]
+  >([]);
+  const [blogs, setBlogs] = useState<Blog[]>([]);
+
+  useEffect(() => {
+    // Fetch data from API
+    const fetchData = async () => {
+      try {
+        const response = await axios.get("/api/v1/blogs");
+        const blogsData: Blog[] = response.data.data.blogs;
+
+        // Calculate the count of each field
+        const fieldCounts = {
+          title: blogsData.length,
+          author: blogsData.filter((blog: Blog) => blog.author).length,
+          description: blogsData.filter((blog: Blog) => blog.description)
+            .length,
+          image: blogsData.filter((blog: Blog) => blog.image).length,
+        };
+
+        // Prepare data for the bar chart
+        const barData = [
+          fieldCounts.title,
+          fieldCounts.author,
+          fieldCounts.description,
+          fieldCounts.image,
+        ];
+
+        // Prepare data for the pie chart
+        const pieData = Object.entries(fieldCounts).map(
+          ([key, value], index) => ({
+            id: index,
+            value,
+            label: `Number of ${key}s`,
+          })
+        );
+
+        setBarChartData(barData);
+        setPieChartData(pieData);
+        setBlogs(blogsData);
+      } catch (error) {
+        console.error("Error fetching blog data:", error);
+      }
+    };
+
+    fetchData();
+  }, []);
 
   return (
     <>
@@ -16,17 +71,19 @@ export const DashboardChart = () => {
         <div className="Dashboard__Bart">
           <BarChart
             className="Dashboard__BartChart"
-            series={[{ data: [35, 44, 24, 34, 27, 50] }]}
+            series={[{ data: barChartData }]}
             height={290}
             width={660}
             xAxis={[
-              { data: ["Q1", "Q2", "Q3", "Q4", "Q5", "Q6"], scaleType: "band" },
+              {
+                data: ["Title", "Author", "Description", "Image"], // X-axis labels
+                scaleType: "band",
+              },
             ]}
-            margin={{ top: 30, bottom: 30, left: 30, right: 55 }}
+            margin={{ top: 30, bottom: 30, left: 30, right: 70 }}
           />
         </div>
       </article>
-      {/* PieChart */}
       <article className="Dashboard__PieCharRight">
         <PieChart
           className="Dashboard__PieChart"
@@ -34,7 +91,7 @@ export const DashboardChart = () => {
             {
               highlightScope: { faded: "global", highlighted: "item" },
               faded: { innerRadius: 30, additionalRadius: -10, color: "gray" },
-              data,
+              data: pieChartData,
               innerRadius: 30,
               outerRadius: 100,
               paddingAngle: 5,
@@ -49,30 +106,33 @@ export const DashboardChart = () => {
           width={450}
         />
       </article>
-      {/* Data Tables */}
       <article className="Dashboard__TableCard">
         <table className="Dashboard__Table">
-          <thead className="">
-            <tr className="">
-              <th className="">ID</th>
-              <th className="">Title</th>
-              <th className="">Image</th>
-              <th className="">Comment</th>
-              <th className="">Date</th>
-              <th className="">ViewsPost</th>
-              <th className="">Views</th>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Title</th>
+              <th>Author</th>
+              <th>Image</th>
+              <th>Description</th>
+              <th>Date</th>
+              <th>Update post</th>
             </tr>
           </thead>
-          <tbody className="">
-            <tr className="">
-              <td>1</td>
-              <td>1</td>
-              <td>1</td>
-              <td>1</td>
-              <td>1</td>
-              <td>1</td>
-              <td>1</td>
-            </tr>
+          <tbody>
+            {blogs.map((blog, index) => (
+              <tr key={blog._id}>
+                <td>{index + 1}</td> {/* Custom sequential ID */}
+                <td>{blog.title}</td>
+                <td>{blog.author}</td>
+                <td>{blog.image}</td>
+                <td>{blog.description}</td>
+                <td>{new Date(blog.createdAt).toLocaleDateString()}</td>
+                <td>
+                  <Link to={`/admin/posts/edit/${blog._id}`}>Edit</Link>
+                </td>
+              </tr>
+            ))}
           </tbody>
         </table>
       </article>
