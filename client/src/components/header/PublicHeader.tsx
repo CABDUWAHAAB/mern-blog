@@ -18,6 +18,11 @@ export const PublicHeader = () => {
             </Link>
           </li>
           <li className="header__list">
+            <Link className="header__link" to="/blog">
+              Blog
+            </Link>
+          </li>
+          <li className="header__list">
             <Link className="header__link" to="/admin/dashboard">
               Admin
             </Link>

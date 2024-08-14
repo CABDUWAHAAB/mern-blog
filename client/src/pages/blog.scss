@@ -1,0 +1,27 @@
+.blog {
+    @apply flex flex-col justify-center flex-wrap;
+    @apply p-[4rem] gap-[4rem];
+
+    &__header{
+
+    }
+
+    &__ul {
+        @apply flex gap-[4rem] items-center justify-center;
+        @apply list-none flex-wrap;
+    }
+
+    &__image {
+        @apply w-full h-[15rem] rounded-t-xl;
+    }
+
+    &__li {
+        @apply w-[20%] min-h-[40rem] bg-white;
+        @apply shadow-lg rounded-xl;
+
+        &:hover {
+            @apply bg-red-400 duration-300;
+            transform: scale(1.0333);
+        }
+    }
+}
