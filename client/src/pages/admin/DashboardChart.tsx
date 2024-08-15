@@ -122,8 +122,7 @@ export const DashboardChart = () => {
           <tbody>
             {blogs.map((blog, index) => (
               <tr className="Dashboard__tableRowBody" key={blog._id}>
-                <td className="Dashboard__tableDataBody">{index + 1}</td>{" "}
-                {/* Custom sequential ID */}
+                <td className="Dashboard__tableDataBody">{index + 1}</td>
                 <td className="Dashboard__tableDataBody">{blog.title}</td>
                 <td className="Dashboard__tableDataBody">{blog.author}</td>
                 <td className="Dashboard__tableDataBody">
@@ -139,7 +138,7 @@ export const DashboardChart = () => {
                 </td>
                 <td className="Dashboard__tableDataBody">
                   <Link to={`/admin/posts/edit/${blog._id}`}>
-                    <img src={Post_edit_icon} alt={Post_edit_icon} />
+                    <img src={Post_edit_icon} alt="Edit" />
                   </Link>
                 </td>
               </tr>
