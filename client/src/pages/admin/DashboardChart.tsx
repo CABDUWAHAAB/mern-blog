@@ -3,7 +3,7 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 import { BarChart } from "@mui/x-charts/BarChart";
 import { PieChart } from "@mui/x-charts/PieChart";
-import { UpdateBlog } from "./posts/Updateblog";
+import Post_edit_icon from "../../assets/admin/posts_icon/post_edit.png";
 
 interface Blog {
   _id: string;
@@ -109,27 +109,38 @@ export const DashboardChart = () => {
       <article className="Dashboard__TableCard">
         <table className="Dashboard__Table">
           <thead>
-            <tr>
-              <th>ID</th>
-              <th>Title</th>
-              <th>Author</th>
-              <th>Image</th>
-              <th>Description</th>
-              <th>Date</th>
-              <th>Update post</th>
+            <tr className="Dashboard__tableRowHead">
+              <th className="Dashboard__tableHead">ID</th>
+              <th className="Dashboard__tableHead">Title</th>
+              <th className="Dashboard__tableHead">Author</th>
+              <th className="Dashboard__tableHead">Image</th>
+              <th className="Dashboard__tableHead">Description</th>
+              <th className="Dashboard__tableHead">Date</th>
+              <th className="Dashboard__tableHead">Update post</th>
             </tr>
           </thead>
           <tbody>
             {blogs.map((blog, index) => (
-              <tr key={blog._id}>
-                <td>{index + 1}</td> {/* Custom sequential ID */}
-                <td>{blog.title}</td>
-                <td>{blog.author}</td>
-                <td>{blog.image}</td>
-                <td>{blog.description}</td>
-                <td>{new Date(blog.createdAt).toLocaleDateString()}</td>
-                <td>
-                  <Link to={`/admin/posts/edit/${blog._id}`}>Edit</Link>
+              <tr className="Dashboard__tableRowBody" key={blog._id}>
+                <td className="Dashboard__tableDataBody">{index + 1}</td>{" "}
+                {/* Custom sequential ID */}
+                <td className="Dashboard__tableDataBody">{blog.title}</td>
+                <td className="Dashboard__tableDataBody">{blog.author}</td>
+                <td className="Dashboard__tableDataBody">
+                  <img
+                    className="Dashboard__tableDataBodyImage"
+                    src={`/images/${blog.image}`}
+                    alt={blog.image}
+                  />
+                </td>
+                <td className="Dashboard__tableDataBody">{blog.description}</td>
+                <td className="Dashboard__tableDataBody">
+                  {new Date(blog.createdAt).toLocaleDateString()}
+                </td>
+                <td className="Dashboard__tableDataBody">
+                  <Link to={`/admin/posts/edit/${blog._id}`}>
+                    <img src={Post_edit_icon} alt={Post_edit_icon} />
+                  </Link>
                 </td>
               </tr>
             ))}
