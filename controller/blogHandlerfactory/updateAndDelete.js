@@ -2,22 +2,34 @@ const catchAsync = require("../../utils/catchAsync");
 
 exports.updateBlog = (Model) =>
   catchAsync(async (req, res) => {
-    const blogs = await Model.findByIdAndUpdate(req.params.id);
+    const { id } = req.params;
+    const updatedBlog = await Model.findByIdAndUpdate(id, req.body, {
+      new: true,
+      runValidators: true,
+    });
+
+    if (!updatedBlog) {
+      return res.status(404).json({
+        status: "fail",
+        message: "No blog found with this ID",
+      });
+    }
 
     res.status(200).json({
       status: "success",
       data: {
-        blogs,
+        blog: updatedBlog,
       },
     });
   });
 
 exports.deleteBlog = (Model) =>
-  catchAsync(async (req, res) => {
-    const blogs = await Model.findByIdAndDelete(req.params.id);
+  catchAsync(async (req, res, next) => {
+    const { id } = req.params;
+    const blogs = await Model.findByIdAndDelete(id);
 
     if (!blogs) {
-      return Error("No blog found with this ID", 404);
+      return next(new AppError("No blog found with this ID", 404)); // Properly handle error
     }
 
     res.status(204).json({

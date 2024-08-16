@@ -140,6 +140,7 @@ export const DashboardChart = () => {
                   <Link to={`/admin/posts/edit/${blog._id}`}>
                     <img src={Post_edit_icon} alt="Edit" />
                   </Link>
+                  <Link to={`/admin/posts/delete/${blog._id}`}>Delete</Link>
                 </td>
               </tr>
             ))}

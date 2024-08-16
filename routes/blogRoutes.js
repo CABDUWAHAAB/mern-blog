@@ -16,6 +16,11 @@ router
 router
   .route("/:id")
   .get(blogController.getBlog)
+  .patch(
+    blogUploads.uploadBlogImage,
+    blogUploads.resizeBlogImage,
+    blogController.updateBlog
+  )
   .delete(blogController.deleteBlog);
 
 module.exports = router;

@@ -58,20 +58,26 @@
 }
 .Dashboard__dash {
             display: grid;
-            height: 100vh;
-            width: 100vw;
-            grid-template-columns: repeat(12, minmax(0, 1fr));
-            grid-template-rows: repeat(12, minmax(0, 1fr));
-            gap: 2rem;
+}
+@media (min-width: 1280px) {
+            .Dashboard__dash {
+                        height: 100vh;
+                        width: 100vw;
+                        grid-template-columns: repeat(12, minmax(0, 1fr));
+                        grid-template-rows: repeat(12, minmax(0, 1fr));
+                        gap: 2rem;
+            }
 }
 /*
         DashboardChart.tsx classes
     */
-.Dashboard__ChartBarLeft {
-            grid-column-start: 2;
-            grid-column-end: 6;
-            grid-row-start: 2;
-            grid-row-end: 4;
+@media (min-width: 1280px) {
+            .Dashboard__ChartBarLeft {
+                        grid-column-start: 2;
+                        grid-column-end: 6;
+                        grid-row-start: 2;
+                        grid-row-end: 4;
+            }
 }
 .Dashboard__Bart {
             --tw-bg-opacity: 1;
@@ -79,64 +85,94 @@
             --tw-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
             --tw-shadow-colored: 0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);
             box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
-            width: 100%;
-            border-radius: 0.5rem;
-            padding: .5rem;
 }
-.Dashboard__PieCharRight {
-            grid-column-start: 6;
-            grid-column-end: 9;
-            grid-row-start: 2;
-            grid-row-end: 6;
+@media (min-width: 1280px) {
+            .Dashboard__Bart {
+                        width: 100%;
+                        border-radius: 0.5rem;
+                        padding: .5rem;
+            }
+            .Dashboard__PieCharRight {
+                        grid-column-start: 6;
+                        grid-column-end: 9;
+                        grid-row-start: 2;
+                        grid-row-end: 6;
+            }
 }
 .Dashboard__PieChart {
-            width: 100%;
             --tw-bg-opacity: 1;
             background-color: rgb(255 255 255 / var(--tw-bg-opacity));
-            border-radius: 0.5rem;
-            padding: .5rem;
+}
+@media (min-width: 1280px) {
+            .Dashboard__PieChart {
+                        width: 100%;
+                        border-radius: 0.5rem;
+                        padding: .5rem;
+            }
+            .Dashboard__TableCard {
+                        grid-column-start: 2;
+                        grid-column-end: 9;
+                        grid-row-start: 6;
+                        grid-row-end: 11;
+            }
 }
 .Dashboard__TableCard {
-            grid-column-start: 2;
-            grid-column-end: 9;
-            grid-row-start: 6;
-            grid-row-end: 11;
-            display: flex;
             justify-content: space-between;
 }
+@media (min-width: 1280px) {
+            .Dashboard__TableCard {
+                        display: flex;
+            }
+}
 .Dashboard__Table {
-            width: 100%;
-            border-collapse: collapse;
             --tw-bg-opacity: 1;
             background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
+@media (min-width: 1280px) {
+            .Dashboard__Table {
+                        width: 100%;
+                        border-collapse: collapse;
+            }
+}
 .Dashboard__tableRowHead {
-            border-left-width: 1px;
-            border-right-width: 1px;
-            border-style: solid;
             --tw-border-opacity: 1;
             border-color: rgb(0 0 0 / var(--tw-border-opacity));
+}
+@media (min-width: 1280px) {
+            .Dashboard__tableRowHead {
+                        border-left-width: 1px;
+                        border-right-width: 1px;
+                        border-style: solid;
+            }
 }
 .Dashboard__tableHead {
 
     }
 .Dashboard__tableRowBody {
-            border-left-width: 1px;
-            border-right-width: 1px;
-            border-style: solid;
             --tw-border-opacity: 1;
             border-color: rgb(0 0 0 / var(--tw-border-opacity));
+}
+@media (min-width: 1280px) {
+            .Dashboard__tableRowBody {
+                        border-left-width: 1px;
+                        border-right-width: 1px;
+                        border-style: solid;
+            }
 }
 .Dashboard__tableDataBody {
-            border-left-width: 1px;
-            border-right-width: 1px;
-            border-style: solid;
             --tw-border-opacity: 1;
             border-color: rgb(0 0 0 / var(--tw-border-opacity));
 }
-.Dashboard__tableDataBodyImage {
-            height: 5rem;
-            width: 5rem;
+@media (min-width: 1280px) {
+            .Dashboard__tableDataBody {
+                        border-left-width: 1px;
+                        border-right-width: 1px;
+                        border-style: solid;
+            }
+            .Dashboard__tableDataBodyImage {
+                        height: 5rem;
+                        width: 5rem;
+            }
 }
 .index__ul {
             display: grid;

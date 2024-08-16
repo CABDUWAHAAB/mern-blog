@@ -16,7 +16,7 @@ exports.createBlog = (Model) =>
 
     if (req.headers.accept.includes("text/html")) {
       // Redirect to home page after successful creation
-      return res.redirect("/posts");
+      return res.redirect("/posts/dashboard");
     }
 
     res.status(201).json({

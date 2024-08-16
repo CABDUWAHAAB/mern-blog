@@ -1,47 +1,45 @@
 .Dashboard {
     &__dash {
-        @apply grid grid-cols-12 grid-rows-12 gap-[2rem] h-screen w-screen;
+        @apply grid xl:grid-cols-12 xl:grid-rows-12 xl:gap-[2rem] xl:h-screen xl:w-screen;
     }
-
-
     /*
         DashboardChart.tsx classes
     */
 
     &__ChartBarLeft {
-        @apply col-start-2 col-end-6;
-        @apply row-start-2 row-end-4;
+        @apply xl:col-start-2 xl:col-end-6;
+        @apply xl:row-start-2 xl:row-end-4;
     }
 
     &__Bart {
         @apply shadow-lg bg-white ;
-        @apply w-full;
-        @apply p-[.5rem] rounded-lg;
+        @apply xl:w-full;
+        @apply xl:p-[.5rem] xl:rounded-lg;
     }
 
     &__PieCharRight {
-        @apply col-start-6 col-end-9;
-        @apply row-start-2 row-end-6;
+        @apply xl:col-start-6 xl:col-end-9;
+        @apply xl:row-start-2 xl:row-end-6;
 
     }
 
     &__PieChart {
-        @apply bg-white w-full;
-        @apply p-[.5rem] rounded-lg;
+        @apply bg-white xl:w-full;
+        @apply xl:p-[.5rem] xl:rounded-lg;
     }
 
     &__TableCard {
-        @apply col-start-2 col-end-9;
-        @apply row-start-6 row-end-11;
-        @apply flex justify-between;
+        @apply xl:col-start-2 xl:col-end-9;
+        @apply xl:row-start-6 xl:row-end-11;
+        @apply xl:flex justify-between;
     }
 
     &__Table {
-        @apply border-collapse w-full bg-white;
+        @apply xl:border-collapse xl:w-full bg-white;
     }
 
     &__tableRowHead {
-      @apply border-x border-solid border-black;
+      @apply xl:border-x xl:border-solid border-black;
     }
 
     &__tableHead {
@@ -50,17 +48,17 @@
     
     
     &__tableRowBody {
-        @apply border-x border-solid border-black;
+        @apply xl:border-x xl:border-solid border-black;
         
     }
 
     &__tableDataBody {
-        @apply border-x border-solid border-black;
+        @apply xl:border-x xl:border-solid border-black;
         
     }
 
     &__tableDataBodyImage {
-        @apply w-20 h-20;
+        @apply xl:w-20 xl:h-20;
     }
 
 }
