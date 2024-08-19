@@ -4,7 +4,7 @@ const { createBlog } = require("./blogHandlerFactory/create");
 const {
   updateBlog,
   deleteBlog,
-} = require("./blogHandlerFactory/updateAndDelete");
+} = require("./blogHandlerfactory/updateAndDelete");
 
 const Blog = require("../model/blogModel");
 

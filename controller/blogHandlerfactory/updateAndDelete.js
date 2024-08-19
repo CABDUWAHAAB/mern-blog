@@ -1,4 +1,7 @@
+const fs = require("fs");
+const path = require("path");
 const catchAsync = require("../../utils/catchAsync");
+const AppError = require("../../utils/appError");
 
 exports.updateBlog = (Model) =>
   catchAsync(async (req, res) => {
@@ -26,12 +29,33 @@ exports.updateBlog = (Model) =>
 exports.deleteBlog = (Model) =>
   catchAsync(async (req, res, next) => {
     const { id } = req.params;
-    const blogs = await Model.findByIdAndDelete(id);
 
-    if (!blogs) {
-      return next(new AppError("No blog found with this ID", 404)); // Properly handle error
+    // Find the blog by ID
+    const blog = await Model.findById(id);
+
+    if (!blog) {
+      return next(new AppError("No blog found with this ID", 404));
     }
 
+    // Get the image path
+    const imagePath = path.join(
+      __dirname,
+      `../../client/public/images/${blog.image}`
+    );
+
+    // Delete the blog from the database
+    await Model.findByIdAndDelete(id);
+
+    // Check if the image exists and delete it
+    fs.unlink(imagePath, (err) => {
+      if (err) {
+        console.error("Error deleting the image:", err);
+      } else {
+        console.log("Image deleted successfully:", imagePath);
+      }
+    });
+
+    // Send a response to the client
     res.status(204).json({
       status: "success",
       data: null,

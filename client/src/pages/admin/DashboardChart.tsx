@@ -65,6 +65,19 @@ export const DashboardChart = () => {
     fetchData();
   }, []);
 
+  // delete blog
+  const handleDelete = async (id: string) => {
+    if (window.confirm("Are you sure you want to delete this blog post?")) {
+      try {
+        await axios.delete(`/api/v1/blogs/${id}`);
+        setBlogs(blogs.filter((blog) => blog._id !== id)); // Update state to remove the deleted blog
+      } catch (error) {
+        console.error("Error deleting the blog post:", error);
+        alert("Failed to delete blog post.");
+      }
+    }
+  };
+
   return (
     <>
       <article className="Dashboard__ChartBarLeft">
@@ -140,7 +153,7 @@ export const DashboardChart = () => {
                   <Link to={`/admin/posts/edit/${blog._id}`}>
                     <img src={Post_edit_icon} alt="Edit" />
                   </Link>
-                  <Link to={`/admin/posts/delete/${blog._id}`}>Delete</Link>
+                  <button onClick={() => handleDelete(blog._id)}>Delete</button>
                 </td>
               </tr>
             ))}

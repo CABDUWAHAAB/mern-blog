@@ -4,7 +4,6 @@ import { AdminHeader } from "./AdminHeader";
 import { Dashboard } from "../../pages/admin/Dashboard";
 import { PostBlog } from "../../pages/admin/posts/PostBlog";
 import { UpdateBlog } from "../../pages/admin/posts/Updateblog";
-import { Deleteblog } from "../../pages/admin/posts/Deleteblog";
 
 export const AdminRoutes = () => {
   return (
@@ -13,7 +12,6 @@ export const AdminRoutes = () => {
         <Route path="dashboard" element={<Dashboard />} />
         <Route path="posts" element={<PostBlog />} />
         <Route path="posts/edit/:id" element={<UpdateBlog />} />
-        <Route path="/admin/posts/dashboard/" element={<Deleteblog />} />
       </Route>
     </Routes>
   );
