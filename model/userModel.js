@@ -1,6 +1,6 @@
-const mongoose = require("mongoose");
 const crypto = require("crypto");
 const validator = require("validator");
+const mongoose = require("mongoose");
 const bcrypt = require("bcrypt");
 
 const userSchema = new mongoose.Schema(
