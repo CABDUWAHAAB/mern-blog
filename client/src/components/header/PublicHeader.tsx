@@ -23,6 +23,16 @@ export const PublicHeader = () => {
             </Link>
           </li>
           <li className="header__list">
+            <Link className="header__link" to="/login">
+              Login
+            </Link>
+          </li>
+          <li className="header__list">
+            <Link className="header__link" to="/signup">
+              Signup
+            </Link>
+          </li>
+          <li className="header__list">
             <Link className="header__link" to="/admin/dashboard">
               Admin
             </Link>

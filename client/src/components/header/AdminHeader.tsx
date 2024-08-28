@@ -10,6 +10,11 @@ export const AdminHeader = () => {
         <header className="adminHead__header">
           <ul className="adminHead__ul">
             <li className="adminHead__li">
+              <Link className="adminHead__link" to="/">
+                Home
+              </Link>
+            </li>
+            <li className="adminHead__li">
               <Link className="adminHead__link" to="/admin/dashboard">
                 Dashboard
               </Link>

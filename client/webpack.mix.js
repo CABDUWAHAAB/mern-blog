@@ -1,47 +1,39 @@
+const mix = require("laravel-mix");
+const tailwindcss = require("tailwindcss");
+const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 const path = require("path");
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 
-module.exports = {
-  mode: "development",
-  entry: "./src/index.tsx", // Ensure this path is correct
-  output: {
-    path: path.resolve(__dirname, "dist"),
-    filename: "bundle.js",
-  },
-  module: {
-    rules: [
-      {
-        test: /\.tsx?$/,
-        use: "ts-loader",
-        exclude: /node_modules/,
-      },
-      {
-        test: /\.scss$/,
-        use: [
-          MiniCssExtractPlugin.loader,
-          "css-loader",
-          "postcss-loader",
-          "sass-loader",
-        ],
-      },
+// Set the public path
+mix.setPublicPath("public");
+
+// Compile SCSS with TailwindCSS
+mix.sass("src/scss/styles.scss", "public/css").options({
+  postCss: [tailwindcss("./tailwind.config.js")],
+});
+
+// Compile React and JavaScript
+mix.js("./src/index.tsx", "public/js").react(); // Use .react() if you're working with React
+
+// Minify CSS and JS files
+mix.webpackConfig({
+  optimization: {
+    minimize: true,
+    minimizer: [
+      new CssMinimizerPlugin({
+        test: /\.css$/,
+        minify: CssMinimizerPlugin.cleanCssMinify,
+      }),
     ],
   },
   resolve: {
-    extensions: [".tsx", ".ts", ".js"],
-  },
-  plugins: [
-    new CleanWebpackPlugin(),
-    new MiniCssExtractPlugin({
-      filename: "css/style.css",
-    }),
-  ],
-  devServer: {
-    static: {
-      directory: path.join(__dirname, "public"),
+    alias: {
+      "@": path.resolve(__dirname, "src"),
     },
-    compress: true,
-    port: 9000,
-    hot: true,
   },
-};
+  stats: {
+    children: true,
+  },
+});
+
+// Disable notifications
+mix.disableNotifications();

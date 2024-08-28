@@ -5,6 +5,8 @@ import { Home } from "../../pages/Home";
 import { About } from "../../pages/About";
 import { Index as AdminIndex } from "../../pages/admin/Index";
 import { Blog } from "../../pages/Blog";
+import { Login } from "../auth/Login";
+import { Signup } from "../auth/Signup";
 
 export const PublicRoutes = () => {
   return (
@@ -16,6 +18,8 @@ export const PublicRoutes = () => {
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
             <Route path="/blog" element={<Blog />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/signup" element={<Signup />} />
           </Route>
           {/* Admin Routes */}
           <Route path="/admin/*" element={<AdminIndex />} />
