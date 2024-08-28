@@ -7,6 +7,7 @@ import { Index as AdminIndex } from "../../pages/admin/Index";
 import { Blog } from "../../pages/Blog";
 import { Login } from "../auth/Login";
 import { Signup } from "../auth/Signup";
+import { AdminProtectedRoute } from "./AdminProtectedRoute";
 
 export const PublicRoutes = () => {
   return (

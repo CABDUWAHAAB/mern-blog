@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 interface SingupForm {
   firstName: string;
@@ -19,6 +20,7 @@ export const Signup = () => {
     password: "",
     passwordConfirm: "",
   });
+  const navigate = useNavigate();
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
@@ -32,6 +34,7 @@ export const Signup = () => {
         "http://localhost:3000/api/v1/users/signup",
         signupData
       );
+      navigate("/login");
       console.log("Signup successful:", response.data);
     } catch (error) {
       console.error("Error during signup:", error);
