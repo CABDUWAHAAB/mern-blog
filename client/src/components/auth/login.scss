@@ -1,0 +1,31 @@
+.Login {
+    @apply w-full h-screen flex flex-col;
+    @apply justify-center items-center;
+    @apply bg-gradient-to-b from-indigo-500;
+    @apply from-50%  to-amber-500 to-50%;
+
+    &__box {
+        @apply shadow-lg p-[4rem] bg-transparent;
+    }
+
+    &__header {
+        @apply text-5xl font-mono font-bold;
+    }
+
+    &__form {
+
+    }
+
+    &__email {
+
+    }
+
+    &__password {
+
+    }
+
+    &__submit {
+
+    }
+
+}

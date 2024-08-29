@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import "./login.scss";
 
 interface LoginForm {
   email: string;
@@ -40,41 +41,41 @@ export const Login = () => {
   };
 
   return (
-    <>
-      <article className="Login">
+    <article className="Login">
+      <div className="Login__box">
         <h1 className="Login__header">Login</h1>
-        <form onSubmit={handleSubmit} className="Login__form">
-          <div>
-            <label htmlFor="email" className="Login__email">
-              Email
-            </label>
-            <input
-              type="text"
-              name="email"
-              id="email"
-              value={loginData.email}
-              onChange={handleChange}
-              required
-            />
-          </div>
-          <div>
-            <label htmlFor="password" className="Login__password">
-              Password
-            </label>
-            <input
-              type="password"
-              name="password"
-              id="password"
-              value={loginData.password}
-              onChange={handleChange}
-              required
-            />
-          </div>
-          <button type="submit" className="Login__submit">
-            Login
-          </button>
-        </form>
+          <form onSubmit={handleSubmit} className="Login__form">
+            <div>
+              <label htmlFor="email" className="Login__email">
+                Email
+              </label>
+              <input
+                type="text"
+                name="email"
+                id="email"
+                value={loginData.email}
+                onChange={handleChange}
+                required
+              />
+            </div>
+            <div>
+              <label htmlFor="password" className="Login__password">
+                Password
+              </label>
+              <input
+                type="password"
+                name="password"
+                id="password"
+                value={loginData.password}
+                onChange={handleChange}
+                required
+              />
+            </div>
+            <button type="submit" className="Login__submit">
+              Login
+            </button>
+          </form>
+        </div>
       </article>
-    </>
   );
 };
