@@ -86,5 +86,5 @@ npm run dev
 
 Access the Application:
 
-    Frontend: Open http://localhost:3000 in your web browser.
+    Frontend: Open http://localhost:5000 in your web browser.
     Admin Dashboard: Accessible at /admin/dashboard after logging in with admin credentials.
