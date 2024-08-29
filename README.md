@@ -58,3 +58,33 @@ The application is designed to offer both public and admin-facing features, with
    ```bash
    git clone https://github.com/CABDUWAHAAB/mern-blog.git
    cd mern-blog
+
+   Install Dependencies:
+
+bash
+
+npm install
+
+Configure Environment Variables: Create a .env file in the root directory and add your MongoDB URI and JWT secret key:
+
+bash
+
+MONGODB_URI=mongodb://localhost:27017/mern-blog
+JWT_SECRET=your_jwt_secret_key
+
+Run the Application: Start the backend server:
+
+bash
+
+npm start
+
+Start the frontend development server (if configured separately):
+
+bash
+
+npm run dev
+
+Access the Application:
+
+    Frontend: Open http://localhost:3000 in your web browser.
+    Admin Dashboard: Accessible at /admin/dashboard after logging in with admin credentials.
