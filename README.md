@@ -32,7 +32,7 @@ The application is designed to offer both public and admin-facing features, with
 - **Frontend**:
   - **React**: For building the user interface and handling frontend logic.
   - **Tailwind CSS**: For styling the components with a utility-first CSS framework.
-  - **Pug**: Used for templating in some components.
+  - **Sass/scss**: Used for bems.
 
 - **Backend**:
   - **Node.js**: The runtime environment for running the server-side code.
