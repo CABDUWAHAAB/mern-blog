@@ -1,62 +1,73 @@
 .Login {
-    @apply w-full h-screen flex flex-col;
-    @apply justify-center items-center;
-    @apply bg-gradient-to-b from-indigo-500;
-    @apply from-50%  to-amber-500 to-50%;
+  @apply w-full h-screen flex flex-col;
+  @apply justify-center items-center;
+  @apply bg-gradient-to-b from-indigo-500;
+  @apply from-50%  to-amber-500 to-50%;
 
-    &__box {
-        @apply shadow-xl p-[4rem] bg-transparent;
-        @apply min-h-[30rem] w-[50rem] flex flex-col;
-        @apply gap-[4rem];
+  &__box {
+    @apply shadow-xl p-[4rem] bg-transparent;
+    @apply min-h-[30rem] w-[50rem] flex flex-col;
+    @apply gap-[4rem];
+  }
+
+  &__header {
+    @apply text-[4rem] font-sans font-bold;
+  }
+
+  &__form {
+    @apply flex flex-col gap-[2rem];
+  }
+
+  &__email-container,
+  &__password-container {
+    @apply flex flex-col gap-[.8rem];
+  }
+
+  &__email,
+  &__passwordLabel {
+    @apply font-medium;
+  }
+
+  &__password-container {
+    @apply relative;
+  }
+
+  &__password-wrapper {
+    @apply flex items-center;
+  }
+
+  &__toggle-eye {
+    @apply absolute right-4 cursor-pointer w-8 h-8;
+  }
+
+  &__input {
+    @apply min-w-[42rem] h-[4rem] p-[1rem];
+
+    &--email {
+      @apply text-2xl;
     }
 
-    &__header {
-        @apply text-5xl font-mono font-bold;
+    &--password {
+      @apply text-2xl;
     }
+  }
 
-    &__form {
-        @apply flex flex-col gap-[2rem];
+  &__submit {
+    @apply w-2/4 min-w-[12rem] h-[5rem];
+    @apply bg-gradient-to-br from-[#55679C]  to-[#d946ef];
+    @apply cursor-pointer text-white text-[1.9rem] font-semibold;
+    @apply rounded-full border-none;
+
+    &:hover {
+      @apply from-[#2E073F] to-[#41B3A2];
     }
+  }
 
-    &__email-container &__password-container {
-        @apply flex flex-col gap-[.8rem];
-    }
+  &__signupBox {
+    @apply flex gap-4;
+  }
 
-    &__email {
-
-    }
-
-    &__passwordLabel {
-
-    }
-
-    &__password-container {
-        @apply relative;
-    }
-
-    &__password-wrapper {
-        @apply flex items-center;
-    }
-
-    &__toggle-eye {
-        @apply absolute right-4 cursor-pointer w-8 h-8;
-    }
-
-    &__input {
-        @apply min-w-[42rem] h-[4rem] p-[1rem];
-    }
-
-    &__submit {
-        @apply w-[16rem] max-w-[20rem] min-w-[12rem] h-[5rem];
-        @apply bg-gradient-to-br from-[#180161]  to-[#d946ef];
-        @apply cursor-pointer text-white text-2xl font-semibold;
-        @apply rounded-md;
-        
-
-
-        &:hover {
-            @apply from-pink-500 to-orange-500;
-        }
-    }
-
+  &__signup {
+    @apply font-semibold;
+  }
 }

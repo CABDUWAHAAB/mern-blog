@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link  } from "react-router-dom";
 import axios from "axios";
 import "./login.scss";
 import view_eye  from "./icons/view_eye.png";
@@ -62,7 +62,7 @@ export const Login = () => {
                 type="text"
                 name="email"
                 id="email"
-                className="Login__input"
+                className="Login__input Login__input--email"
                 value={loginData.email}
                 onChange={handleChange}
                 required
@@ -77,7 +77,7 @@ export const Login = () => {
                 type={showPassword ? "text" : "password"}
                 name="password"
                 id="password"
-                className="Login__input"
+                className="Login__input Login__input--password"
                 value={loginData.password}
                 onChange={handleChange}
                 required
@@ -93,6 +93,12 @@ export const Login = () => {
             <button type="submit" className="Login__submit">
               Login
             </button>
+            <div className="Login__signupBox">
+              Don't have an account?
+              <Link className="Login__signup" to="/signup">
+                  Register
+              </Link>
+            </div>
           </form>
         </div>
       </article>

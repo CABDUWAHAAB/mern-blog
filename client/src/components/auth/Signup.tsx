@@ -42,7 +42,6 @@ export const Signup = () => {
   };
 
   return (
-    <>
       <article className="Signup">
         <h1>Sign up</h1>
         <form className="Signup__form" onSubmit={handleSubmit}>
@@ -114,6 +113,5 @@ export const Signup = () => {
           <button type="submit">Sign Up</button>
         </form>
       </article>
-    </>
   );
 };

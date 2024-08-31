@@ -18,9 +18,13 @@ module.exports = {
     "./src/components/auth/*.scss",
     "./src/components/form/*.scss",
     "./src/components/posts/*.scss",
+    "./src/components/profile/*.scss",
   ],
   theme: {
     extend: {},
   },
-  plugins: [],
+  plugins: [
+    require('daisyui'),
+    require('flowbite/plugin'),
+  ],
 };

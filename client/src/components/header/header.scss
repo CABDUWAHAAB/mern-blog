@@ -3,7 +3,7 @@
 
     &__ul {
         @apply flex list-none gap-[4rem];
-        @apply justify-start items-center;
+        @apply justify-between items-center;
     }
 
     &__list {

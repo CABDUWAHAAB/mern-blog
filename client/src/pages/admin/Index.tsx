@@ -5,7 +5,6 @@ import "./adminIndex.scss";
 
 export const Index = () => {
   return (
-    <>
       <div className="index">
         <ul className="index__ul">
           <li className="index__li--right">
@@ -16,6 +15,5 @@ export const Index = () => {
           </li>
         </ul>
       </div>
-    </>
   );
 };

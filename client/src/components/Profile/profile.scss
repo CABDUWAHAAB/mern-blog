@@ -1,0 +1,30 @@
+.profile {
+    &__button {
+      @apply flex items-center space-x-3 cursor-pointer; 
+    }
+  
+    &__avatar {
+      @apply w-10 h-10 rounded-full;
+    }
+  
+    &__name {
+      @apply text-sm font-medium text-gray-800;
+    }
+  
+    &__dropdown {
+      @apply absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg z-10; 
+    }
+  
+    &__list {
+      @apply py-2 text-sm text-gray-700; 
+    }
+  
+    &__item {
+      @apply border-b border-gray-100 last:border-none;
+    }
+  
+    &__link {
+      @apply block px-4 py-2 hover:bg-gray-100;
+    }
+  }
+  
