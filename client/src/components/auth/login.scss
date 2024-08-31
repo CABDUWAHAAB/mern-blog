@@ -5,7 +5,9 @@
     @apply from-50%  to-amber-500 to-50%;
 
     &__box {
-        @apply shadow-lg p-[4rem] bg-transparent;
+        @apply shadow-xl p-[4rem] bg-transparent;
+        @apply min-h-[30rem] w-[50rem] flex flex-col;
+        @apply gap-[4rem];
     }
 
     &__header {
@@ -13,19 +15,48 @@
     }
 
     &__form {
+        @apply flex flex-col gap-[2rem];
+    }
 
+    &__email-container &__password-container {
+        @apply flex flex-col gap-[.8rem];
     }
 
     &__email {
 
     }
 
-    &__password {
+    &__passwordLabel {
 
     }
 
-    &__submit {
+    &__password-container {
+        @apply relative;
+    }
 
+    &__password-wrapper {
+        @apply flex items-center;
+    }
+
+    &__toggle-eye {
+        @apply absolute right-4 cursor-pointer w-8 h-8;
+    }
+
+    &__input {
+        @apply min-w-[42rem] h-[4rem] p-[1rem];
+    }
+
+    &__submit {
+        @apply w-[16rem] max-w-[20rem] min-w-[12rem] h-[5rem];
+        @apply bg-gradient-to-br from-[#180161]  to-[#d946ef];
+        @apply cursor-pointer text-white text-2xl font-semibold;
+        @apply rounded-md;
+        
+
+
+        &:hover {
+            @apply from-pink-500 to-orange-500;
+        }
     }
 
 }
